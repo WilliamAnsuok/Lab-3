@@ -28,8 +28,18 @@ def f_backpack(p, names, a):
             points -= values[n]
 
     if points > 0:
-        print(backpack[:4])
-        print(backpack[4:])
+        if backpack[3] != backpack[4] and backpack[4] != backpack[5]:
+            if backpack[4] != backpack[5]:
+                print(backpack[:4])
+                print(backpack[4:])
+            else:
+                m = backpack[4:]
+                print(backpack[:4])
+                print(m[::-1])
+        else:
+            a = [backpack[3], backpack[4], backpack[5], backpack[1]]
+            print(a)
+            print(backpack[4:])
         print(points)
     elif a == 1:
         print('None')
