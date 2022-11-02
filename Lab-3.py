@@ -28,8 +28,8 @@ def f_backpack(p, names, a):
             points -= values[n]
 
     if points > 0:
-        if backpack[3] != backpack[4] and backpack[4] != backpack[5]:
-            if backpack[4] != backpack[5]:
+        if (backpack[2] != backpack[3] and backpack[3] != backpack[4]) or (backpack[5] != backpack[4] and backpack[3] != backpack[4]):
+            if backpack[3] != backpack[4]:
                 print(backpack[:4])
                 print(backpack[4:])
             else:
@@ -37,9 +37,16 @@ def f_backpack(p, names, a):
                 print(backpack[:4])
                 print(m[::-1])
         else:
-            a = [backpack[3], backpack[4], backpack[5], backpack[1]]
-            print(a)
-            print(backpack[4:])
+            if backpack[2] != backpack[3] and backpack[3] != backpack[4]:
+                a = [backpack[0], backpack[1], backpack[2], backpack[6]]
+                b = [backpack[3], backpack[4], backpack[5], backpack[7]]
+                print(a)
+                print(b)
+            else:
+                a = [backpack[2], backpack[3], backpack[4], backpack[0]]
+                b = [backpack[5], backpack[6], backpack[7], backpack[1]]
+                print(a)
+                print(b)
         print(points)
     elif a == 1:
         print('None')
@@ -48,6 +55,7 @@ f_backpack(8,short_names, 1)
 f_backpack(7, short_names, 1)
 
 # Доп задание 2
+print('Будем выводить лишь решения, если их нет, значит это последняя строка')
 bi = [0,1]
 for a0 in bi:
     for a1 in bi:
